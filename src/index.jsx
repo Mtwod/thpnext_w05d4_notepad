@@ -1,10 +1,15 @@
+import MarkDownInput from 'components/MarkDownInput';
+import NavBar from 'components/NavBar';
+import NoteDisplay from 'components/NoteDisplay';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.scss';
 
 const App = () => (
-  <div>
-    <h1>Hello World</h1>
-    <p>This is an introduction, place your components here!</p>
+  <div className="App">
+    <NavBar />
+    <MarkDownInput />
+    <NoteDisplay />
   </div>
 );
 

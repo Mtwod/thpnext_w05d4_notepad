@@ -1,0 +1,17 @@
+@import './variables';
+
+body {
+  background-color: $app-background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+  'NavBar NoteDisplay'
+  'NavBar MarkDownInput';
+  color: $primary-color;
+  width: 100vw;
+  height: 100vh;
+}

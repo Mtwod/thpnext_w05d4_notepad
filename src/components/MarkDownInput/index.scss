@@ -1,0 +1,34 @@
+@import 'variables.scss';
+
+@mixin margin {
+  margin: 5px 10px;
+}
+
+.MarkDownInput {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+
+  &__title {
+    @include margin();
+    background-color: $MarkDownInput-background-color;
+    border: none;
+    height: 50px;
+  }
+
+  &__content {
+    @include margin();
+    background-color: $MarkDownInput-background-color;
+    border: none;
+    height: 100%;
+  }
+
+  &__save {
+    @include margin();
+    width: 200px;
+    height: 45px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+  }
+}

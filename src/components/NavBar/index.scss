@@ -1,0 +1,8 @@
+@import 'variables.scss';
+
+.NavBar {
+  grid-area: NavBar;
+  width: 20vw;
+  border-right: $NavBar-border-size solid $primary-color;
+  margin-right: -$NavBar-border-size;
+}
