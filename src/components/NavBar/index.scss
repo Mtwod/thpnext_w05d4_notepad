@@ -5,4 +5,27 @@
   width: 20vw;
   border-right: $NavBar-border-size solid $primary-color;
   margin-right: -$NavBar-border-size;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__button {
+    margin: 20px;
+    justify-content: center;
+    width: 200px;
+    height: 45px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+  }
+
+  &__notes {
+    list-style-type: none;
+    width: 85%;
+  }
+
+  &__note__title {
+    cursor: pointer;
+  }
 }

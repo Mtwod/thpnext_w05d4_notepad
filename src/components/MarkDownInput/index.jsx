@@ -13,7 +13,7 @@ const MarkDownInput = (props) => {
     <div className="MarkDownInput">
       <input className="MarkDownInput__title" value={note.title} type="text" onChange={onChangeTitle} />
       <textarea className="MarkDownInput__content" value={note.content} onChange={onChangeContent} />
-      <button type="button" className="MarkDownInput__save" onClick={onSave}>Sauvegarder</button>
+      <button type="button" className="MarkDownInput__save" onClick={onSave}>Sauvegarder (déjà automatique)</button>
     </div>
   );
 };
