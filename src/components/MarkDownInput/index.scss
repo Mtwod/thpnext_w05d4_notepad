@@ -12,15 +12,21 @@
   &__title {
     @include margin();
     background-color: $MarkDownInput-background-color;
+    color: $primary-color;
     border: none;
     height: 50px;
+    padding: 10px 20px;
   }
 
   &__content {
     @include margin();
+    @include font-family();
     background-color: $MarkDownInput-background-color;
+    color: $primary-color;
     border: none;
     height: 100%;
+    padding: 20px;
+    font-size: 0.9em;
   }
 
   &__save {

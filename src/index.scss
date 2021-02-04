@@ -4,6 +4,7 @@ body {
   background-color: $app-background-color;
   margin: 0;
   padding: 0;
+  @include font-family();
 }
 
 .App {
