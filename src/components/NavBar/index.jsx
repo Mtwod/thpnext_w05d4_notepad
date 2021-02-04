@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
@@ -36,6 +37,10 @@ const NavBar = ({ onAddNote, onChangeNote }) => {
     onChangeNote(noteToDisplay);
   };
 
+  const truncate = (source, size) => {
+    return source.length > size ? `${source.slice(0, size - 1)}…` : source;
+  };
+
   return (
     <div className="NavBar">
       <button type="button" className="NavBar__button" onClick={handleClickAddNote}>Ajouter une note</button>
@@ -52,7 +57,7 @@ const NavBar = ({ onAddNote, onChangeNote }) => {
               >
                 {`${item.note.id} - ${item.note.title}`}
               </h3>
-              <p className="NavBar__note__content">{item.note.content}</p>
+              <p className="NavBar__note__content">{truncate(item.note.content, 100)}</p>
             </li>
           ))
         )}
