@@ -5,18 +5,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
-// const localStorage = window.localStorage;
-
 const App = () => {
   const [note, setNote] = React.useState({ title: '', content: '' });
+  const { localStorage } = window;
 
   const handleChangeTitle = (event) => {
-    setNote({ title: event.target.value });
+    setNote({ title: event.target.value, content: note.content });
   };
 
   const handleChangeContent = (event) => {
-    setNote({ content: event.target.value });
+    setNote({ title: note.title, content: event.target.value });
   };
+
+  const handleSave = () => {
+    const storageContent = JSON.stringify(note);
+    alert('You just saved your note!');
+    localStorage.setItem('notepad', storageContent);
+  };
+
+  React.useEffect(() => {
+    const storageContent = localStorage.getItem('notepad');
+    if (storageContent) {
+      const convertedNote = JSON.parse(storageContent);
+      setNote(convertedNote);
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -24,9 +37,10 @@ const App = () => {
       <MarkDownInput
         onChangeTitle={handleChangeTitle}
         onChangeContent={handleChangeContent}
+        onSave={handleSave}
         note={note}
       />
-      <NoteDisplay />
+      <NoteDisplay note={note} />
     </div>
   );
 };

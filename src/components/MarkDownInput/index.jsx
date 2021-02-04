@@ -1,16 +1,19 @@
 import React from 'react';
 import './index.scss';
 
-const MarkDownInput = ({ note, onChangeTitle, onChangeContent }) => {
-  const handleClickSave = () => {
-    console.log('You just clicked save!');
-  };
+const MarkDownInput = (props) => {
+  const {
+    note,
+    onChangeTitle,
+    onChangeContent,
+    onSave,
+  } = props;
 
   return (
     <div className="MarkDownInput">
       <input className="MarkDownInput__title" value={note.title} type="text" onChange={onChangeTitle} />
       <textarea className="MarkDownInput__content" value={note.content} onChange={onChangeContent} />
-      <button type="button" className="MarkDownInput__save" onClick={handleClickSave}>Sauvegarder</button>
+      <button type="button" className="MarkDownInput__save" onClick={onSave}>Sauvegarder</button>
     </div>
   );
 };

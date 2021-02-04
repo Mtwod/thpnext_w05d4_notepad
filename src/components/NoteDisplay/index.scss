@@ -1,4 +1,18 @@
+@import 'variables.scss';
+
 .NoteDisplay {
   grid-area: NoteDisplay;
   width: 80vw;
+  height: 50vh;
+  overflow: auto;
+
+  &__title {
+    border-bottom: 1px solid $primary-color;
+    height: 50px;
+    margin: 15px;
+  }
+
+  &__content {
+    margin: 15px;
+  }
 }
